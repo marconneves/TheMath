@@ -1,9 +1,23 @@
 export function numberCorrectional(number: number): number {
   const stringNumber = String(number);
 
-  const [, afterDot] = stringNumber.split('.');
+  const [beforeTrace, afterTrace] = stringNumber.split('-');
 
-  const numberOfCases = afterDot.length;
+  let numberOfCases = 0;
+
+  if (afterTrace) {
+    const [, afterDot] = beforeTrace.split('.');
+
+    if (afterDot && afterDot.length > 2) {
+      numberOfCases = afterDot.length - 1 + Number(afterTrace);
+    } else {
+      numberOfCases = Number(afterTrace);
+    }
+  } else {
+    const [, afterDot] = stringNumber.split('.');
+
+    numberOfCases = afterDot ? afterDot.length : 0;
+  }
 
   const correctionalBase = 10 ** numberOfCases;
 
