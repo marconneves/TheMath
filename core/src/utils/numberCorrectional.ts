@@ -10,7 +10,10 @@ export function numberCorrectional(number: number): number {
   return correctionalBase < 10 ? 10 : correctionalBase;
 }
 
-export default (firstNumber: number, secondNumber: number): number => {
+export const numberCorrectionalBigger = (
+  firstNumber: number,
+  secondNumber: number
+): number => {
   const correctionalFirst = numberCorrectional(firstNumber);
   const correctionalSecond = numberCorrectional(secondNumber);
 

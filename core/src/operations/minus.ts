@@ -1,10 +1,10 @@
-import numberCorrectional from '../utils/numberCorrectional';
+import { numberCorrectionalBigger } from '../utils/numberCorrectional';
 
 export default function minus(
   firstNumber: number,
   secondNumber: number
 ): number {
-  const correctional = numberCorrectional(firstNumber, secondNumber);
+  const correctional = numberCorrectionalBigger(firstNumber, secondNumber);
 
   const number =
     (correctional * firstNumber - correctional * secondNumber) / correctional;
