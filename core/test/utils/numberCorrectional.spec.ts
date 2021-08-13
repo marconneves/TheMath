@@ -28,7 +28,13 @@ describe('Create correctional number of error dot float', () => {
     expect(correctional).toBe(100);
   });
 
-  it('if send 0.7 and 0.003 need return bigger 1000', () => {
+  it('if send 0.00000000000000000000000123123123 need return 100000000000000000000000000000000', () => {
+    const correctional = numberCorrectional(0.00000000000000000000000123123123);
+
+    expect(correctional).toBe(100000000000000000000000000000000);
+  });
+
+  it(' send 0.7 and 0.003 need return bigger 1000', () => {
     const correctional = numberCorrectionalBigger(0.7, 0.003);
 
     expect(correctional).toBe(1000);
