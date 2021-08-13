@@ -7,7 +7,9 @@ export default function division(
   const correctional = numberCorrectional(firstNumber, secondNumber);
 
   const number =
-    (correctional * firstNumber) / (correctional * secondNumber) / correctional;
+    (correctional * firstNumber) /
+    (correctional * secondNumber) /
+    (correctional / correctional);
 
   const endNumber = number;
 
