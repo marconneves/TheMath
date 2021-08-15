@@ -1,8 +1,10 @@
 /* eslint-disable no-param-reassign */
-import multiply from './operations/multiply';
-import divide from './operations/divide';
-import add from './operations/add';
-import subtract from './operations/subtract';
+import { getBracketOperation } from './getBracketOperation';
+
+import multiply from '../operations/multiply';
+import divide from '../operations/divide';
+import add from '../operations/add';
+import subtract from '../operations/subtract';
 
 function divisionOrMultiplication(fragments: string[]) {
   const multiplyIndex = fragments.indexOf('x');
@@ -90,20 +92,56 @@ function additionsOrSubtract(fragments: string[]) {
   additionsOrSubtract(fragments);
 }
 
-export default (operation: string): number => {
-  const fragments = operation.split(/(-|\+|\*|x|\/)/g);
+function resolveOperations(fragments: string[]) {
+  const numberMultipliesOrDivision = fragments.filter(value =>
+    /(x|\*|\/)/g.test(value)
+  ).length;
 
-  const numberMultiplies = (operation.match(/(x|\*)/g) || []).length;
-  const numberDivisions = (operation.match(/\//g) || []).length;
-  if (numberMultiplies > 0 || numberDivisions > 0) {
+  if (numberMultipliesOrDivision > 0) {
     divisionOrMultiplication(fragments);
   }
 
-  const numberAdditions = (operation.match(/\+/g) || []).length;
-  const numberMinus = (operation.match(/-/g) || []).length;
-  if (numberAdditions > 0 || numberMinus > 0) {
+  const numberAdditionsOrMinus = fragments.filter(value =>
+    /(\+|-)/g.test(value)
+  ).length;
+
+  if (numberAdditionsOrMinus > 0) {
     additionsOrSubtract(fragments);
   }
+}
+
+function resolveBracket(fragments: string[]) {
+  const numberBrackets = fragments.filter(value =>
+    /(\(|\)W)/g.test(value)
+  ).length;
+
+  if (numberBrackets > 0) {
+    const [openIndex, closeIndex] = getBracketOperation(fragments);
+
+    const bracketOperation = fragments.splice(
+      openIndex + 1,
+      closeIndex - openIndex - 1
+    );
+
+    resolveOperations(bracketOperation);
+
+    const [resultBracketOperation] = bracketOperation;
+
+    fragments[openIndex] = resultBracketOperation;
+    fragments.splice(openIndex + 1, 1);
+
+    resolveBracket(fragments);
+  }
+}
+
+export default (operation: string): number => {
+  const fragments = (operation.split(/(-|\+|\*|x|\/|\(|\))/g) || []).filter(
+    value => value
+  );
+
+  resolveBracket(fragments);
+
+  resolveOperations(fragments);
 
   const [result] = fragments;
   return Number(result);
