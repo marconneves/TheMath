@@ -1,31 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useState } from 'react';
-import { StyleSheet, SafeAreaView, Text, View, Button } from 'react-native';
+import { StyleSheet, SafeAreaView, Text, View } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
+
+import { Keyboard } from './components/Keyboard';
+import { Screen } from './components/Screen';
 
 export default function App() {
-  const [ activeResponse, setActiveResponse ] = useState(false);
+  const [ result, setResult ] = useState('');
+  const [ operation, setOperation ] = useState('');
 
-  function result(){
-    setActiveResponse(!activeResponse);
+  function changeResult(newResult: string) {
+    setResult(newResult);
   }
 
+  function changeOperation(newResult: string) {
+    setOperation(newResult);
+  }
   return (
     <View style={styles.application}>
-      <StatusBar style='auto' />
       <SafeAreaView style={styles.container}>
-        <View style={{ flex: 1, backgroundColor: '#afa'}} />
-        <View style={styles.valueScream}>
-          {activeResponse ? <Text style={styles.value}>200+123</Text> : (
-            <>
-              <Text style={styles.value}>323</Text>
-              <Text style={styles.valueHistory}>200+123</Text>
-            </>
-          )}
-        </View>
-        <View style={{ flex: 17, backgroundColor: '#faa' }}>
-          <Button onPress={result} title="Get Result" />
-        </View>
+        <View style={{ flex: 1 }} />
+        <Screen
+          style={styles.scream}
+          operation={operation}
+          result={result}
+        />
+        <Keyboard
+          style={styles.keyboard}
+          changeResult={changeResult}
+          changeOperation={changeOperation}
+        />
+        <View style={{flex: 1}}/>
       </SafeAreaView>
     </View>
   );
@@ -40,21 +46,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#292929'
   },
-  valueScream: {
-    flex: 10,
-    backgroundColor: '#ffa',
-    alignItems: 'flex-end',
-    justifyContent: 'center',
-    paddingEnd: 20
+  scream: {
+    flex: 10
   },
-  value: {
-    fontSize: 46,
-    color: '#292929',
-    fontWeight: 'bold'
-  },
-  valueHistory: {
-    fontSize: 18,
-    color: '#292929',
-    fontWeight: 'bold'
+  keyboard: {
+    flex: 13
   }
 });
