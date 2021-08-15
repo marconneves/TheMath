@@ -59,36 +59,35 @@ function divisionOrMultiplication(fragments: string[]) {
   divisionOrMultiplication(fragments);
 }
 
-function Additions(fragments: string[]) {
-  const additionIndex = fragments.indexOf('+');
+function additionsOrSubtract(fragments: string[]) {
+  const subtractIndex = fragments.indexOf('-');
+  const addIndex = fragments.indexOf('+');
 
-  if (additionIndex !== -1) {
-    const internalResult = add(
-      Number(fragments[additionIndex - 1]),
-      Number(fragments[additionIndex + 1])
-    );
-
-    fragments[additionIndex - 1] = String(internalResult);
-    fragments.splice(additionIndex, 2);
-
-    Additions(fragments);
+  if (subtractIndex === -1 && addIndex === -1) {
+    return;
   }
-}
 
-function Minus(fragments: string[]) {
-  const minusIndex = fragments.indexOf('-');
-
-  if (minusIndex !== -1) {
+  if (subtractIndex !== -1 && subtractIndex > addIndex) {
     const internalResult = subtract(
-      Number(fragments[minusIndex - 1]),
-      Number(fragments[minusIndex + 1])
+      Number(fragments[subtractIndex - 1]),
+      Number(fragments[subtractIndex + 1])
     );
 
-    fragments[minusIndex - 1] = String(internalResult);
-    fragments.splice(minusIndex, 2);
-
-    Minus(fragments);
+    fragments[subtractIndex - 1] = String(internalResult);
+    fragments.splice(subtractIndex, 2);
   }
+
+  if (addIndex !== -1 && addIndex > subtractIndex) {
+    const internalResult = add(
+      Number(fragments[addIndex - 1]),
+      Number(fragments[addIndex + 1])
+    );
+
+    fragments[addIndex - 1] = String(internalResult);
+    fragments.splice(addIndex, 2);
+  }
+
+  additionsOrSubtract(fragments);
 }
 
 export default (operation: string): number => {
@@ -101,13 +100,9 @@ export default (operation: string): number => {
   }
 
   const numberAdditions = (operation.match(/\+/g) || []).length;
-  if (numberAdditions > 0) {
-    Additions(fragments);
-  }
-
   const numberMinus = (operation.match(/-/g) || []).length;
-  if (numberMinus > 0) {
-    Minus(fragments);
+  if (numberAdditions > 0 || numberMinus > 0) {
+    additionsOrSubtract(fragments);
   }
 
   const [result] = fragments;

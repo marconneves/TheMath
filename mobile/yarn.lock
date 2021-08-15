@@ -5447,10 +5447,10 @@ temp@0.8.3:
     os-tmpdir "^1.0.0"
     rimraf "~2.2.6"
 
-the-math@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/the-math/-/the-math-1.0.0.tgz#245022b1125bf5011a05c97eb2832d6cd42cf9ff"
-  integrity sha512-htTpRc07VUV79Jl9zpOLRU4nyLKx/Znrjogth1lCf35tTjaW101HY/FIGlCN0UWl0vAlau7Yb6VKVmJ49ZmV7g==
+the-math@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/the-math/-/the-math-1.0.1.tgz#1cc4679225581db75642d9c16ec347970bae1f7a"
+  integrity sha512-UTUmgGsmyAEPLKfC/YGwDB7UYdo0xYr5imKXOPPr/Qp3YM/c1msocGNWy2vF5rOF0XRcGKazo/qqdmdbxeK0ew==
 
 thenify-all@^1.0.0:
   version "1.6.0"

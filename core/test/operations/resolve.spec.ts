@@ -55,6 +55,12 @@ describe('Resolve string operations', () => {
     expect(Number(result.toFixed(3))).toBe(22.385);
   });
 
+  test("can resolve '24+14+54-2+10000'", () => {
+    const result = TheMath.resolve('24+14+54-2+10000');
+
+    expect(Number(result.toFixed(3))).toBe(10090);
+  });
+
   test("can resolve '5*4*(5+4*3)'", () => {
     const result = TheMath.resolve('5*4*(5+4*3)');
 
