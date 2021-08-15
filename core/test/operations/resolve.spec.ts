@@ -72,4 +72,10 @@ describe('Resolve string operations', () => {
 
     expect(result).toBe(120);
   });
+
+  test("can resolve '12*(5*(1+1))+(12+11*3)'", () => {
+    const result = TheMath.resolve('12*(5*(1+1))+(12+11*3)');
+
+    expect(result).toBe(165);
+  });
 });

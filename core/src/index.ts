@@ -1,19 +1,19 @@
-import division from './operations/division';
-import minus from './operations/minus';
-import multiplication from './operations/multiplication';
-import plus from './operations/plus';
+import divide from './operations/divide';
+import subtract from './operations/subtract';
+import multiply from './operations/multiply';
+import add from './operations/add';
 
 import resolve from './resolve';
 
 const TheMath = {
-  minus,
-  m: minus,
-  plus,
-  p: plus,
-  division,
-  dv: division,
-  multiplication,
-  ml: multiplication,
+  subtract,
+  s: subtract,
+  add,
+  a: add,
+  divide,
+  d: divide,
+  multiply,
+  m: multiply,
   resolve
 };
 

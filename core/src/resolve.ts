@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
-import multiplication from './operations/multiplication';
-import division from './operations/division';
-import plus from './operations/plus';
-import minus from './operations/minus';
+import multiply from './operations/multiply';
+import divide from './operations/divide';
+import add from './operations/add';
+import subtract from './operations/subtract';
 
 function divisionOrMultiplication(fragments: string[]) {
   const multiplyIndex = fragments.indexOf('x');
@@ -21,7 +21,7 @@ function divisionOrMultiplication(fragments: string[]) {
     multiplyIndex !== -1 &&
     (multiplyIndex > divisionIndex || multiplyIndex > multiplyAsteriskIndex)
   ) {
-    const internalResult = multiplication(
+    const internalResult = multiply(
       Number(fragments[multiplyIndex - 1]),
       Number(fragments[multiplyIndex + 1])
     );
@@ -35,7 +35,7 @@ function divisionOrMultiplication(fragments: string[]) {
     (multiplyAsteriskIndex > divisionIndex ||
       multiplyAsteriskIndex > multiplyIndex)
   ) {
-    const internalResult = multiplication(
+    const internalResult = multiply(
       Number(fragments[multiplyAsteriskIndex - 1]),
       Number(fragments[multiplyAsteriskIndex + 1])
     );
@@ -48,7 +48,7 @@ function divisionOrMultiplication(fragments: string[]) {
     divisionIndex !== -1 &&
     (divisionIndex > multiplyIndex || divisionIndex > multiplyAsteriskIndex)
   ) {
-    const internalResult = division(
+    const internalResult = divide(
       Number(fragments[divisionIndex - 1]),
       Number(fragments[divisionIndex + 1])
     );
@@ -63,7 +63,7 @@ function Additions(fragments: string[]) {
   const additionIndex = fragments.indexOf('+');
 
   if (additionIndex !== -1) {
-    const internalResult = plus(
+    const internalResult = add(
       Number(fragments[additionIndex - 1]),
       Number(fragments[additionIndex + 1])
     );
@@ -79,7 +79,7 @@ function Minus(fragments: string[]) {
   const minusIndex = fragments.indexOf('-');
 
   if (minusIndex !== -1) {
-    const internalResult = minus(
+    const internalResult = subtract(
       Number(fragments[minusIndex - 1]),
       Number(fragments[minusIndex + 1])
     );
@@ -92,17 +92,15 @@ function Minus(fragments: string[]) {
 }
 
 export default (operation: string): number => {
-  const numberMultiplies = (operation.match(/(x|\*)/g) || []).length;
-  const numberDivisions = (operation.match(/\//g) || []).length;
-
   const fragments = operation.split(/(-|\+|\*|x|\/)/g);
 
+  const numberMultiplies = (operation.match(/(x|\*)/g) || []).length;
+  const numberDivisions = (operation.match(/\//g) || []).length;
   if (numberMultiplies > 0 || numberDivisions > 0) {
     divisionOrMultiplication(fragments);
   }
 
   const numberAdditions = (operation.match(/\+/g) || []).length;
-
   if (numberAdditions > 0) {
     Additions(fragments);
   }

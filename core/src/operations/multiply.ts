@@ -1,6 +1,6 @@
 import { numberCorrectionalBigger } from '../utils/numberCorrectional';
 
-export default function multiplication(
+export default function multiply(
   firstNumber: number,
   secondNumber: number
 ): number {

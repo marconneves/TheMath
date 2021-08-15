@@ -1,15 +1,10 @@
 import { numberCorrectionalBigger } from '../utils/numberCorrectional';
 
-export default function division(
-  firstNumber: number,
-  secondNumber: number
-): number {
+export default function add(firstNumber: number, secondNumber: number): number {
   const correctional = numberCorrectionalBigger(firstNumber, secondNumber);
 
   const number =
-    (correctional * firstNumber) /
-    (correctional * secondNumber) /
-    (correctional / correctional);
+    (correctional * firstNumber + correctional * secondNumber) / correctional;
 
   const endNumber = number;
 
