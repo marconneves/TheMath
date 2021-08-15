@@ -3,6 +3,8 @@ import minus from './operations/minus';
 import multiplication from './operations/multiplication';
 import plus from './operations/plus';
 
+import resolve from './resolve';
+
 const TheMath = {
   minus,
   m: minus,
@@ -11,7 +13,8 @@ const TheMath = {
   division,
   dv: division,
   multiplication,
-  ml: multiplication
+  ml: multiplication,
+  resolve
 };
 
 export default TheMath;
