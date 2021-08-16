@@ -30,43 +30,53 @@ $ yarn add the-math
 ## Exemples
 
 1. Solve subtraction between 2 numbers.
+
 ```typescript
 import TheMath from 'the-math';
 
 const result = TheMath.subtract(10, 3);
 // result: 7
+
 ```
 
 2. Solve subtraction between 2 numbers.
+
 ```typescript
 import TheMath from 'the-math';
 
 const result = TheMath.sum(14, 7);
 // result: 21
+
 ```
 
 3. Solve division between 2 numbers.
+
 ```typescript
 import TheMath from 'the-math';
 
 const result = TheMath.divide(21, 3);
 // result: 7
+
 ```
 
 4. Solve multiplication between 2 numbers.
+
 ```typescript
 import TheMath from 'the-math';
 
 const result = TheMath.multiply(6, 3);
 // result: 18
+
 ```
 
 5. Solve a string operation arithmetic.
+
 ```typescript
 import TheMath from 'the-math';
 
 const result = TheMath.resolve('12+4*3*9/2+1');
 // result: 67
+
 ```
 
 ## Contributors
