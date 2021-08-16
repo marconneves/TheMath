@@ -1,0 +1,41 @@
+{
+  "name": "@the-math/cli",
+  "version": "0.0.1",
+  "description": "Cli to resolve your math arithmetics operations",
+  "main": "./dist/index.ts",
+  "bin": {
+    "the-math": "./dist/index.js",
+    "tm": "./dist/index.js"
+  },
+  "repository": "https://github.com/MarconWillian/TheMath/tree/develop/cli",
+  "author": "Marcon Willian <oi@marcon.run>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "@types/node": "^16.6.1",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "7.18.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-import-resolver-typescript": "^2.2.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.1",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.49",
+    "typescript": "^4.3.5",
+    "@types/jest": "^27.0.1",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4"
+  }
+}
