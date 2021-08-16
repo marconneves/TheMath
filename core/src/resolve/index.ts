@@ -3,7 +3,7 @@ import { getBracketOperation } from './getBracketOperation';
 
 import multiply from '../operations/multiply';
 import divide from '../operations/divide';
-import add from '../operations/add';
+import sum from '../operations/sum';
 import subtract from '../operations/subtract';
 
 function divisionOrMultiplication(fragments: string[]) {
@@ -80,7 +80,7 @@ function additionsOrSubtract(fragments: string[]) {
   }
 
   if (addIndex !== -1 && addIndex > subtractIndex) {
-    const internalResult = add(
+    const internalResult = sum(
       Number(fragments[addIndex - 1]),
       Number(fragments[addIndex + 1])
     );

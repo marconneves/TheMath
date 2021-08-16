@@ -1,15 +1,15 @@
 import divide from './operations/divide';
 import subtract from './operations/subtract';
 import multiply from './operations/multiply';
-import add from './operations/add';
+import sum from './operations/sum';
 
 import resolve from './resolve';
 
 const TheMath = {
   subtract,
   s: subtract,
-  add,
-  a: add,
+  sum,
+  a: sum,
   divide,
   d: divide,
   multiply,
