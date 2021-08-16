@@ -3426,6 +3426,11 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
+the-math@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/the-math/-/the-math-1.1.7.tgz#9efe690cd1226a3b12da3aa3d8196c6a1513f6b1"
+  integrity sha512-n16hm7aBPOn1D/9nYewe1hCV8NXNSCs1JqwQYseNEGwb+wSb7RLkYqOgCTsUGZiv3JqwjVETZoUvhFDzS6o3mg==
+
 throat@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/throat/-/throat-6.0.1.tgz#d514fedad95740c12c2d7fc70ea863eb51ade375"
