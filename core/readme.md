@@ -50,7 +50,7 @@ const result = TheMath.sum(14, 7);
 import TheMath from 'the-math';
 
 const result = TheMath.divide(21, 3);
-// result: 3
+// result: 7
 ```
 
 4. Solve multiplication between 2 numbers.
