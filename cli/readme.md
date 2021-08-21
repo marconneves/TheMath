@@ -6,6 +6,7 @@ Create a basic calculator with addition feature.
 
 ## User Stories
 
+### V1 - Version 1.*
 - [ ] User can add multiple numbers using `add` command.
 - [ ] User can add floating numbers using the `-f` flag.
 - [ ] User can add only even/odd numbers using `even`/`odd` sub-command.
@@ -13,11 +14,17 @@ Create a basic calculator with addition feature.
 
 > Note: The stories 1 and 2 are basically for static typed language, where passed arguments must be of same type.
 
-## Bonus Features
-
+#### Bonus Features
 - [ ] User can use all the basic arithmetic operations like (addition, subtraction, multiplication and divison).
 - [ ] User can use `--help` or `-h` flag to get the sub-commands of command.
 - [ ] **Power of** and **Square Root of** operation.
+
+### V2 - Version 2.*
+- [ ] User not need set `-f` flag to use floating numbers
+- [ ] User can add string expression using `resolve` or direct command.
+- [ ] User can add multiple numbers using `multiply` command.
+- [ ] User can add multiple numbers using `divide` command.
+- [ ] User can use `--help` or `-h` flag to get the sub-commands of command.
 
 ## Useful links and resources
 
