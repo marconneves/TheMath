@@ -22,7 +22,7 @@ const AddCommands = {
               arrayOriginal
                 .slice(index + 1)
                 .map(numberOfArray => ` + ${numberOfArray}`)
-                .join()
+                .join('')
             )
           );
         }
