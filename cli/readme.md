@@ -30,6 +30,7 @@ Create a basic calculator with addition feature.
 
 - [How to build a CLI tool in NodeJS ?](https://www.freecodecamp.org/news/how-to-build-a-cli-tool-in-nodejs-bc4f67d898ec/)
 - [Build a Command Line Interface (CLI) Application with Node.js](https://codeburst.io/build-a-command-line-interface-cli-application-with-node-js-59becec90e28)
+- [How to build a CLI with Node.js](https://www.twilio.com/blog/how-to-build-a-cli-with-node-js)
 
 ## Example projects
 

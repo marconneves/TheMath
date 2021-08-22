@@ -6,6 +6,6 @@ import { Commander } from './utils/commander';
 export async function cli(rawArgs: string[]): Promise<void> {
   const args = parseArgumentsIntoOptions(rawArgs);
 
-  const app = Commander(args);
-  commands(app);
+  const program = Commander(args);
+  commands(program);
 }
