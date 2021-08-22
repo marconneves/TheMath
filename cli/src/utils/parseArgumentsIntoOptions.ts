@@ -3,7 +3,6 @@ import arg from 'arg';
 export type Flags = {
   help: boolean;
   version: boolean;
-  float: boolean;
   verbose: boolean;
 };
 
@@ -30,12 +29,10 @@ export function parseArgumentsIntoOptions(rawArgs: string[]): Options {
     {
       '--help': Boolean,
       '--version': Boolean,
-      '--float': Boolean,
       '--negative': [String],
       '--verbose': Boolean,
       '-h': '--help',
       '-v': '--version',
-      '-f': '--float',
       '-n': '--negative'
     },
     {
@@ -61,7 +58,6 @@ export function parseArgumentsIntoOptions(rawArgs: string[]): Options {
     flags: {
       help: args['--help'] || false,
       version: args['--version'] || false,
-      float: args['--float'] || false,
       verbose: args['--verbose'] || false
     },
     command: args._[0],

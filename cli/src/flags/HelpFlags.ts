@@ -23,12 +23,11 @@ export default {
     console.log(chalk`{green.bold Help: add command}
 
 With add command you can sum multiples numbers, float or int.
-  {cyan.bold add float:} You can use flag {bgGray.bold  --float } , {bgGray.bold  -f }  to add float number.
   {cyan.bold add even or odd:} You can use subCommand {bgGray.bold  odd } or {bgGray.bold  even } to get only number of this types.
   {cyan.bold log operation:} You can use flag {bgGray.bold  --verbose } to see log of operations, number to number.
   {bgGray ┌ Ex.: ───────────────────────────────┐}
   {bgGray │  > tm add 5 123 1                   │}
-  {bgGray │  > tm add -f 5.1 123.2 0.1          │}
+  {bgGray │  > tm add 5.1 123.2 0.1             │}
   {bgGray │  > tm add even 2 124 20             │}
   {bgGray │  > tm add odd 3 7 121               │}
   {bgGray └─────────────────────────────────────┘}
@@ -38,11 +37,10 @@ With add command you can sum multiples numbers, float or int.
     console.log(chalk`{green.bold Help: subtract command}
 
 With add command you can subtract multiples numbers, float or int.
-  {cyan.bold add float:} You can use flag {bgGray.bold  --float } , {bgGray.bold  -f }  to add float number.
   {cyan.bold log operation:} You can use flag {bgGray.bold  --verbose } to see log of operations, number to number.
   {bgGray ┌ Ex.: ───────────────────────────────┐}
   {bgGray │  > tm subtract 5 123 1              │}
-  {bgGray │  > tm subtract -f 5.1 123.2 0.1     │}
+  {bgGray │  > tm subtract 5.1 123.2 0.1        │}
   {bgGray └─────────────────────────────────────┘}
     `);
   },
@@ -50,11 +48,10 @@ With add command you can subtract multiples numbers, float or int.
     console.log(chalk`{green.bold Help: multiply command}
 
 With add command you can multiply multiples numbers, float or int.
-  {cyan.bold add float:} You can use flag {bgGray.bold  --float } , {bgGray.bold  -f }  to add float number.
   {cyan.bold log operation:} You can use flag {bgGray.bold  --verbose } to see log of operations, number to number.
   {bgGray ┌ Ex.: ───────────────────────────────┐}
   {bgGray │  > tm multiply 5 123 1              │}
-  {bgGray │  > tm multiply -f 5.1 123.2 0.1     │}
+  {bgGray │  > tm multiply 5.1 123.2 0.1        │}
   {bgGray └─────────────────────────────────────┘}
     `);
   },
@@ -62,11 +59,10 @@ With add command you can multiply multiples numbers, float or int.
     console.log(chalk`{green.bold Help: divide command}
 
 With add command you can divide multiples numbers, float or int.
-  {cyan.bold add float:} You can use flag {bgGray.bold  --float } , {bgGray.bold  -f }  to add float number.
   {cyan.bold log operation:} You can use flag {bgGray.bold  --verbose } to see log of operations, number to number.
   {bgGray ┌ Ex.: ───────────────────────────────┐}
   {bgGray │  > tm divide 5 123 1                │}
-  {bgGray │  > tm divide -f 5.1 123.2 0.1       │}
+  {bgGray │  > tm divide 5.1 123.2 0.1          │}
   {bgGray └─────────────────────────────────────┘}
     `);
   }

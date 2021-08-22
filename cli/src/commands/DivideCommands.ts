@@ -5,12 +5,7 @@ import { Flags } from '../utils/parseArgumentsIntoOptions';
 
 const DivideCommands = {
   async index(params: string[], flags: Flags): Promise<void> {
-    const numbers = params.map(numberString => {
-      if (flags.float) {
-        return Number(numberString);
-      }
-      return Math.round(Number(numberString));
-    });
+    const numbers = params.map(numberString => Number(numberString));
 
     const result = numbers.reduce(
       (previousValue: number, currentValue: number, index, arrayOriginal) => {
