@@ -14,9 +14,9 @@ Create a basic calculator with addition feature.
 - [x] User can use `--help` or `-h` flag to get the sub-commands of command.
 
 ### V2 - Version 2.*
-- [ ] User can subtract multiple numbers using `subtract` command.
-- [ ] User can multiply multiple numbers using `multiplication` command.
-- [ ] User can divide multiple numbers using `division` command.
+- [x] User can subtract multiple numbers using `subtract` command.
+- [x] User can multiply multiple numbers using `multiplication` command.
+- [x] User can divide multiple numbers using `division` command.
 
 ### V3 - Version 4.*
 - [ ] User not need set `-f` flag to use floating numbers
