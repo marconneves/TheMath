@@ -11,19 +11,22 @@ Create a basic calculator with addition feature.
 - [x] User can add floating numbers using the `-f` flag.
 - [x] User can add only even/odd numbers using `even`/`odd` sub-command.
 - [x] User can use `--help` or `-h` flag to get all the available commands and flags.
-
-> Note: The stories 1 and 2 are basically for static typed language, where passed arguments must be of same type.
-
-#### Bonus Features
-- [ ] User can use all the basic arithmetic operations like (addition, subtraction, multiplication and divison).
 - [x] User can use `--help` or `-h` flag to get the sub-commands of command.
-- [ ] **Power of** and **Square Root of** operation.
 
 ### V2 - Version 2.*
+- [ ] User can subtract multiple numbers using `subtract` command.
+- [ ] User can multiply multiple numbers using `multiplication` command.
+- [ ] User can divide multiple numbers using `division` command.
+
+### V3 - Version 4.*
 - [ ] User not need set `-f` flag to use floating numbers
 - [ ] User can add string expression using `resolve` or direct command.
 - [ ] User can can set flag `-r`, `--round` to select number of decimal cases or round to int.
 
+##  V4 - Version 4.*
+- [ ] User can resolve **Power Of**.
+- [ ] User can resolve **Square Root of**.
+- [ ] User can resolve **rule of three**
 ## Useful links and resources
 
 - [How to build a CLI tool in NodeJS ?](https://www.freecodecamp.org/news/how-to-build-a-cli-tool-in-nodejs-bc4f67d898ec/)
