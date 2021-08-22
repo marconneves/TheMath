@@ -1,15 +1,14 @@
 export function numberCorrectional(number: number): number {
   const stringNumber = String(number);
 
-  const [beforeTrace, afterTrace] = stringNumber.split('-');
-
+  const [beforeTrace, afterTrace] = stringNumber.split('e-');
   let numberOfCases = 0;
 
   if (afterTrace) {
     const [, afterDot] = beforeTrace.split('.');
 
     if (afterDot && afterDot.length > 2) {
-      numberOfCases = afterDot.length - 1 + Number(afterTrace);
+      numberOfCases = afterDot.length + Number(afterTrace);
     } else {
       numberOfCases = Number(afterTrace);
     }
@@ -20,8 +19,10 @@ export function numberCorrectional(number: number): number {
   }
 
   const correctionalBase = 10 ** numberOfCases;
+  if (correctionalBase < 10 && correctionalBase > 1)
+    console.table({ number, correctionalBase, numberOfCases });
 
-  return correctionalBase < 10 ? 10 : correctionalBase;
+  return correctionalBase;
 }
 
 export const numberCorrectionalBigger = (
