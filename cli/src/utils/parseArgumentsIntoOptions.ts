@@ -4,6 +4,8 @@ export type Flags = {
   help: boolean;
   version: boolean;
   verbose: boolean;
+  round: boolean;
+  fixe: number;
 };
 
 export type Options = {
@@ -31,9 +33,13 @@ export function parseArgumentsIntoOptions(rawArgs: string[]): Options {
       '--version': Boolean,
       '--negative': [String],
       '--verbose': Boolean,
+      '--round': Boolean,
+      '--fixe': Number,
       '-h': '--help',
       '-v': '--version',
-      '-n': '--negative'
+      '-n': '--negative',
+      '-r': '--round',
+      '-f': '--fixe'
     },
     {
       argv: rawArgs.slice(2).map(maskNumberWithTrace)
@@ -58,7 +64,9 @@ export function parseArgumentsIntoOptions(rawArgs: string[]): Options {
     flags: {
       help: args['--help'] || false,
       version: args['--version'] || false,
-      verbose: args['--verbose'] || false
+      verbose: args['--verbose'] || false,
+      round: args['--round'] || false,
+      fixe: args['--fixe'] || 0
     },
     command: args._[0],
     ...(subCommand && { subCommand }),
