@@ -43,8 +43,6 @@ export function parseArgumentsIntoOptions(rawArgs: string[]): Options {
     }
   );
 
-  console.log(args);
-
   const possiblesSubCommands: { [key: string]: string[] } = {
     add: ['even', 'odd']
   };
