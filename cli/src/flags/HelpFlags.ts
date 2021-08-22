@@ -77,5 +77,20 @@ With add command you can divide multiples numbers, float or int.
   {bgGray │  > tm divide 100 3 -r --fixe 2           │}
   {bgGray └──────────────────────────────────────────┘}
     `);
+  },
+  async resolve(): Promise<void> {
+    console.log(chalk`{green.bold Help: resolve command}
+
+With resolve command,  you can get result of arithmetic expressions.
+  {cyan.bold --round, -r:} You can use this flag to round result.
+  {cyan.bold --fixe, -f:} When you round your result, you can set number of cases after comma.
+  {cyan.bold log operation:} You can use flag {bgGray.bold  --verbose } to see log of operations, number to number.
+  {bgGray ┌ Ex.: ────────────────────────────────────┐}
+  {bgGray │  > tm resolve 5 + 123 * 3 + 2            │}
+  {bgGray │  > tm resolve 5.1 - 123.2 + 0.1          │}
+  {bgGray │  > tm resolve '5.1 - 123.2 + 0.1'        │}
+  {bgGray │  > tm resolve 100 / 3 -r --fixe 2        │}
+  {bgGray └──────────────────────────────────────────┘}
+    `);
   }
 };

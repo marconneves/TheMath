@@ -6,9 +6,7 @@ import fixeResult from '../utils/fixeResult';
 
 const MultiplyCommands = {
   async index(params: string[], flags: Flags): Promise<void> {
-    const operation = params.join('');
-
-    console.log(operation);
+    const operation = params.join('').replace(' ', '');
 
     const result = TheMath.resolve(operation);
 
