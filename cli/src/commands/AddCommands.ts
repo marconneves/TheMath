@@ -15,20 +15,23 @@ const AddCommands = {
     const result = numbers.reduce(
       (previousValue: number, currentValue: number, index, arrayOriginal) => {
         if (flags.verbose && index > 0) {
+          const restParams = arrayOriginal
+            .slice(index + 1)
+            .map(numberOfArray => ` - ${numberOfArray}`);
+
           console.log(
-            '= %s%s',
+            restParams.length > 0 ? '= %s%s' : '= %s',
             chalk.yellow.bold(`${previousValue} + ${currentValue}`),
-            chalk.gray.bold(
-              arrayOriginal
-                .slice(index + 1)
-                .map(numberOfArray => ` + ${numberOfArray}`)
-                .join('')
-            )
+            chalk.gray.bold(restParams.join(''))
           );
         }
+
+        if (!previousValue) {
+          return currentValue;
+        }
+
         return TheMath.sum(previousValue, currentValue);
-      },
-      0
+      }
     );
 
     console.log('= %s', chalk.green.bold(result));
