@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint --ext .ts ./"
   },
   "devDependencies": {
     "@types/node": "^16.6.1",
