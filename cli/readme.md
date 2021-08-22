@@ -20,8 +20,8 @@ Create a basic calculator with addition feature.
 
 ### V3 - Version 3.*
 - [x] User not need set `-f` flag to use floating numbers
+- [x] User can can set flag `-r`, `--round` to select number of decimal cases or round to int.
 - [ ] User can add string expression using `resolve` or direct command.
-- [ ] User can can set flag `-r`, `--round` to select number of decimal cases or round to int.
 
 ##  V4 - Version 4.*
 - [ ] User can resolve **Power Of**.

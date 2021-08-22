@@ -2,6 +2,7 @@ import TheMath from 'the-math';
 import chalk from 'chalk';
 
 import { Flags } from '../utils/parseArgumentsIntoOptions';
+import fixeResult from '../utils/fixeResult';
 
 const AddCommands = {
   async index(params: string[], flags: Flags): Promise<void> {
@@ -29,7 +30,7 @@ const AddCommands = {
       }
     );
 
-    console.log('= %s', chalk.green.bold(result));
+    console.log('= %s', chalk.green.bold(fixeResult(result, flags)));
   },
   async even(params: string[], flags: Flags): Promise<void> {
     const verifyIsEven = params.filter(number => {
