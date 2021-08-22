@@ -3431,10 +3431,10 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-the-math@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/the-math/-/the-math-1.1.7.tgz#9efe690cd1226a3b12da3aa3d8196c6a1513f6b1"
-  integrity sha512-n16hm7aBPOn1D/9nYewe1hCV8NXNSCs1JqwQYseNEGwb+wSb7RLkYqOgCTsUGZiv3JqwjVETZoUvhFDzS6o3mg==
+the-math@^1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/the-math/-/the-math-1.1.9.tgz#b9151e0e81bc375606e8e9da64014cc555c18de3"
+  integrity sha512-5wasJH2ba2hkyaHbyCzS7rpSlYpxwteZw4RZhDYFvc7jvm5MyQjePWdoRm0dGxYpvv8v3x4jHBc9s+/TNa+mqw==
 
 throat@^6.0.1:
   version "6.0.1"
