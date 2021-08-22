@@ -18,7 +18,7 @@ Create a basic calculator with addition feature.
 - [x] User can multiply multiple numbers using `multiplication` command.
 - [x] User can divide multiple numbers using `division` command.
 
-### V3 - Version 4.*
+### V3 - Version 3.*
 - [ ] User not need set `-f` flag to use floating numbers
 - [ ] User can add string expression using `resolve` or direct command.
 - [ ] User can can set flag `-r`, `--round` to select number of decimal cases or round to int.
