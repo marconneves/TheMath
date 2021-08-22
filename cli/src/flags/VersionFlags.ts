@@ -7,7 +7,7 @@ export default {
   async index(): Promise<void> {
     const version = require('../../package').version || 'error';
 
-    console.log(chalk`{green.bold TheMath:} ${version}
+    console.log(chalk`{green.bold TheMath:} v${version}
 {green.bold NodeJS:} ${process.version}
 `);
   }
