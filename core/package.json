@@ -1,6 +1,6 @@
 {
   "name": "the-math",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Core of TheMath Calculator",
   "main": "./dist/index.js",
   "license": "MIT",
