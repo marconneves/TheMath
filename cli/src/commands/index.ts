@@ -6,6 +6,8 @@ import SubtractCommands from './SubtractCommands';
 import MultiplyCommands from './MultiplyCommands';
 import DivideCommands from './DivideCommands';
 
+import ResolveCommands from './ResolveCommands';
+
 export default async (program: CommanderCLI<Flags>): Promise<void> => {
   await program.command('add', AddCommands.index);
   await program.command('add', 'even', AddCommands.even);
@@ -16,4 +18,6 @@ export default async (program: CommanderCLI<Flags>): Promise<void> => {
   await program.command('multiply', MultiplyCommands.index);
 
   await program.command('divide', DivideCommands.index);
+
+  await program.command('resolve', ResolveCommands.index);
 };
