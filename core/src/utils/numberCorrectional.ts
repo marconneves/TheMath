@@ -19,8 +19,6 @@ export function numberCorrectional(number: number): number {
   }
 
   const correctionalBase = 10 ** numberOfCases;
-  if (correctionalBase < 10 && correctionalBase > 1)
-    console.table({ number, correctionalBase, numberOfCases });
 
   return correctionalBase;
 }
