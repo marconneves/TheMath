@@ -27,6 +27,7 @@ Create a basic calculator with addition feature.
 - [ ] User can resolve **Power Of**.
 - [ ] User can resolve **Square Root of**.
 - [ ] User can resolve **rule of three**
+
 ## Useful links and resources
 
 - [How to build a CLI tool in NodeJS ?](https://www.freecodecamp.org/news/how-to-build-a-cli-tool-in-nodejs-bc4f67d898ec/)
