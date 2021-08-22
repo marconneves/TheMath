@@ -8,7 +8,7 @@ export default {
   {cyan.bold --help, -h:} For you get help with this lib.
     {bgGray ┌ Ex.: ───────────────────────────────────────────────┐}
     {bgGray │  > tm -h - Request help to completed program.       │}
-    {bgGray │  tm -h add - Request help to internal command add.  │}
+    {bgGray │  > tm -h add - Request help to internal command add.│}
     {bgGray └─────────────────────────────────────────────────────┘}
 
   {cyan.bold --version, -v:} Get version of program.
