@@ -5,6 +5,7 @@ import multiply from '../operations/multiply';
 import divide from '../operations/divide';
 import sum from '../operations/sum';
 import subtract from '../operations/subtract';
+import { getNegativeOperation } from './getNegativeOperation';
 
 function divisionOrMultiplication(fragments: string[]) {
   const multiplyIndex = fragments.indexOf('x');
@@ -134,12 +135,29 @@ function resolveBracket(fragments: string[]) {
   }
 }
 
+function resolveNegativeNumber(fragments: string[]) {
+  const numberNegative = getNegativeOperation(fragments);
+
+  if (numberNegative === -1) {
+    return;
+  }
+
+  const internalResult = multiply(Number(fragments[numberNegative + 1]), -1);
+
+  fragments[numberNegative] = fragments[numberNegative].slice(0, 1);
+  fragments[numberNegative + 1] = String(internalResult);
+
+  resolveNegativeNumber(fragments);
+}
+
 export default (operation: string): number => {
-  const fragments = (operation.split(/(-|\+|\*|x|\/|\(|\))/g) || []).filter(
-    value => value
-  );
+  const fragments = (
+    operation.split(/(--?|\+-?|\*-?|x-?|\/-?|\(|\))/g) || []
+  ).filter(value => value);
 
   resolveBracket(fragments);
+
+  resolveNegativeNumber(fragments);
 
   resolveOperations(fragments);
 
