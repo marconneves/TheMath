@@ -1,0 +1,26 @@
+name: Publish CORE
+
+on:
+  push:
+    branches:
+      - 'deploy/core'
+
+jobs:
+  publish_npm:
+    name: Publish NPM
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./core
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+        registry-url: 'https://registry.npmjs.org'
+    - run: yarn install
+    - run: yarn test
+    - run: yarn build
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

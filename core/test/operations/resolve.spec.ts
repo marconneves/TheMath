@@ -84,4 +84,22 @@ describe('Resolve string operations', () => {
 
     expect(result).toBe(165);
   });
+
+  test("can resolve '12+-1+2'", () => {
+    const result = TheMath.resolve('12+-1+2');
+
+    expect(result).toBe(13);
+  });
+
+  test("can resolve '12+-1+-2'", () => {
+    const result = TheMath.resolve('12+-1+-2');
+
+    expect(result).toBe(9);
+  });
+
+  test("can resolve '12+-1--2'", () => {
+    const result = TheMath.resolve('12+-1--2');
+
+    expect(result).toBe(13);
+  });
 });
