@@ -13,6 +13,17 @@ export function Keyboard({ style, changeResult, changeOperation }: KeyboardProps
   const [ operation, setOperation ] = useState<string[]>([]);
 
   function handleResult(){
+
+    if(isNaN(Number(operation[operation.length - 1]))){
+      operation.splice(operation.length - 1, 1);
+    }
+
+    if(isNaN(Number(operation[operation.length - 1]))){
+      operation.splice(operation.length - 1, 1);
+    }
+
+    changeOperation(operation.join(''));
+
     let result = TheMath.resolve(operation.join(''));
 
     changeResult(String(result));
@@ -27,7 +38,7 @@ export function Keyboard({ style, changeResult, changeOperation }: KeyboardProps
   function handleSetNumber(number: string){
     const operationsArray = operation;
 
-    if(isNaN(Number(operationsArray[operationsArray.length - 1]))){
+    if((isNaN(Number(operationsArray[operationsArray.length - 1])))){
       operationsArray.push(number);
     } else {
       operationsArray[operationsArray.length - 1] = `${operationsArray[operationsArray.length - 1]}${number}`;
@@ -40,6 +51,16 @@ export function Keyboard({ style, changeResult, changeOperation }: KeyboardProps
   function handleOperation(operationSelected: string){
     if(isNaN(Number(operation[operation.length - 1]))){
       const operationsArray = operation;
+
+      if(operationSelected === '-' && !isNaN(Number(operationsArray[operationsArray.length - 2]))){
+        operationsArray.push(operationSelected);
+      } else if(operationSelected === '+' &&  isNaN(Number(operationsArray[operationsArray.length - 2])) && isNaN(Number(operationsArray[operationsArray.length - 1]))){
+        operationsArray.splice(operationsArray.length - 1, 1);
+
+        setOperation(operationsArray);
+        changeOperation(operationsArray.join(''));
+        return;
+      }
 
       operationsArray[operationsArray.length - 1] = operationSelected;
 

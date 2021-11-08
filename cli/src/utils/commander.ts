@@ -47,7 +47,10 @@ export function Commander(args: Options) {
 
       process.exit(1);
     } catch (error) {
-      console.log(chalk.red.bold(error.message));
+      if (error instanceof Error) {
+        console.log(chalk.red.bold(error.message));
+      }
+
       process.exit(0);
     }
   };
