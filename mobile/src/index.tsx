@@ -17,6 +17,7 @@ export default function App() {
   function changeOperation(newResult: string) {
     setOperation(newResult);
   }
+
   return (
     <View style={styles.application}>
       <SafeAreaView style={styles.container}>
