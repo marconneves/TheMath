@@ -1,3 +1,24 @@
+![TheMath_CLI](https://i.imgur.com/4fqVfAE.png)
+
+# TheMath CLI
+Lib using the-math to use operations in cli.
+Need install nodejs in computer
+
+## Installation
+
+This is a [Node.js](https://nodejs.org/en/) module available through the
+[npm registry](https://www.npmjs.com/package/the-math).
+
+Use npm:
+```
+$ npm install the-math
+```
+
+Use yarn:
+```
+$ yarn add the-math
+```
+
 # Calculator CLI - Exercise
 
 **Tier:** 2-Intermediate
