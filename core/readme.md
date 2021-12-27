@@ -1,3 +1,5 @@
+![TheMath](./assets/TheMath.png)
+
 # TheMath
 Lib with function to execute operations arithmetics, and you can resolve string operation with resolve.
 
@@ -5,9 +7,6 @@ Lib with function to execute operations arithmetics, and you can resolve string 
 
 This is a [Node.js](https://nodejs.org/en/) module available through the
 [npm registry](https://www.npmjs.com/package/the-math).
-
-Installation is done using the
-[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 Use npm:
 ```
