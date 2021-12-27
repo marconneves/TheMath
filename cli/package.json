@@ -1,6 +1,6 @@
 {
   "name": "@the-math/cli",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "Cli to resolve your math arithmetics operations",
   "main": "./dist/index.ts",
   "bin": {
@@ -42,6 +42,6 @@
   "dependencies": {
     "arg": "^5.0.1",
     "chalk": "^5.0.0",
-    "the-math": "^1.2.3"
+    "the-math": "^1.2.4"
   }
 }

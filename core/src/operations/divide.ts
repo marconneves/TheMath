@@ -6,10 +6,7 @@ export default function divide(
 ): number {
   const correctional = numberCorrectionalBigger(firstNumber, secondNumber);
 
-  const number =
-    (correctional * firstNumber) /
-    (correctional * secondNumber) /
-    (correctional / correctional);
+  const number = (correctional * firstNumber) / (correctional * secondNumber);
 
   const endNumber = number;
 

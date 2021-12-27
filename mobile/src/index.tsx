@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { StyleSheet, SafeAreaView, Text, View } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 
 import { Keyboard } from './components/Keyboard';
 import { Screen } from './components/Screen';
