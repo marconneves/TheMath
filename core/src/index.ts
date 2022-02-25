@@ -4,6 +4,7 @@ import multiply from './operations/multiply';
 import sum from './operations/sum';
 
 import resolve from './resolve';
+import chain from './chain';
 
 const TheMath = {
   subtract,
@@ -14,7 +15,9 @@ const TheMath = {
   d: divide,
   multiply,
   m: multiply,
-  resolve
+  resolve,
+  chain
 };
 
+export { resolve, chain };
 export default TheMath;
