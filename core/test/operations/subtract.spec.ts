@@ -17,11 +17,11 @@ describe('Minus operations', () => {
     const firstResult = TheMath.subtract(12, 0);
     expect(firstResult).toBe(12);
 
-    const secondResult = TheMath.subtract(12, 0);
-    expect(secondResult).toBe(12);
+    const secondResult = TheMath.subtract(0, 12);
+    expect(secondResult).toBe(-12);
   });
 
-  it('can calculate 1239817239183213 minus 1239817239183123 and inverse', () => {
+  it('can calculate 1239817239183213 minus 1239817239183123', () => {
     const firstResult = TheMath.subtract(1239817239183213, 1239817239183123);
 
     expect(firstResult).toBe(90);
