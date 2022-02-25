@@ -150,7 +150,7 @@ function resolveNegativeNumber(fragments: string[]) {
   resolveNegativeNumber(fragments);
 }
 
-export default (operation: string): number => {
+function resolve(operation: string): number {
   const fragments = (
     operation.split(/(--?|\+-?|\*-?|x-?|\/-?|\(|\))/g) || []
   ).filter(value => value);
@@ -163,4 +163,6 @@ export default (operation: string): number => {
 
   const [result] = fragments;
   return Number(result);
-};
+}
+
+export default resolve;
