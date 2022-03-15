@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish_npm:
-    name: Publish NPM
+    name: Publish NPM - CORE
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -26,7 +26,7 @@ jobs:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish_github:
-    name: Publish GitHub Package
+    name: Publish GitHub Package - CORE
     runs-on: ubuntu-latest
     defaults:
       run:
