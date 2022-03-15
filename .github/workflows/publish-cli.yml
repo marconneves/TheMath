@@ -24,3 +24,26 @@ jobs:
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish_github:
+    name: Publish GitHub Package
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '12.x'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@themarkwill'
+    - run: npm install
+    - run: npm test
+    - run: npm run build
+    - name: Update package.json to GitHubName
+      uses: jossef/action-set-json-field@v1
+      with:
+        file: package.json
+        field: name
+        value: '@themarkwill/the-math-cli'
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.PACKAGES_TOKEN }}

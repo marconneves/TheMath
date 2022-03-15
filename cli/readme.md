@@ -1,22 +1,18 @@
-![TheMath_CLI](https://i.imgur.com/4fqVfAE.png)
+![TheMath_CLI][the-math-logo]
 
 # TheMath CLI
 Lib using the-math to use operations in cli.
 Need install nodejs in computer
 
 ## Installation
-
-This is a [Node.js](https://nodejs.org/en/) module available through the
-[npm registry](https://www.npmjs.com/package/the-math).
-
-Use npm:
-```
-$ npm install the-math
+You can install with [npm][the-math-npm]:
+```bash
+  npm install the-math
 ```
 
-Use yarn:
-```
-$ yarn add the-math
+You can install with [yarn][the-math-yarn]:
+```bash
+  yarn add the-math
 ```
 
 # Calculator CLI - Exercise
@@ -58,3 +54,13 @@ Create a basic calculator with addition feature.
 ## Example projects
 
 -   [my-calc](https://github.com/schadokar/my-calc)
+
+****
+This project is under the MIT license. See the [LICENSE][license-link] file for more details.
+
+
+<!-- Markdown link & img's -->
+[license-link]: /LICENSE
+[the-math-logo]: https://i.imgur.com/4fqVfAE.png
+[the-math-npm]: https://www.npmjs.com/package/the-math
+[the-math-yarn]: https://yarnpkg.com/package/the-math
