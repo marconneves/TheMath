@@ -28,6 +28,9 @@ jobs:
   publish_github:
     name: Publish GitHub Package
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./core
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
