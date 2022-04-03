@@ -1,6 +1,6 @@
 {
   "name": "the-math",
-  "version": "1.3.4",
+  "version": "1.4.0",
   "description": "Core of TheMath Calculator",
   "main": "./dist/index.js",
   "publishConfig": {
