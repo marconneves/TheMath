@@ -50,12 +50,12 @@ describe('Create Chain operations | Global Settings - round Type', () => {
   });
 });
 
-describe('Create Chain operations | Global Settings - decimal caracteres', () => {
-  it('can round floor fixed in 2 decimal 1.91231 to 1.91', () => {
+describe('Create Chain operations | Global Settings - precision caracteres', () => {
+  it('can round floor fixed in 2 precision 1.91231 to 1.91', () => {
     const chain = TheMath.createChain({
       round: {
         type: 'floor',
-        decimal: 2
+        precision: 2
       }
     });
     const result = chain(1.91231).done();
@@ -63,11 +63,11 @@ describe('Create Chain operations | Global Settings - decimal caracteres', () =>
     expect(result).toBe(1.91);
   });
 
-  it('can round ceil fixed in 4 decimal 1.123123 to 1.1232', () => {
+  it('can round ceil fixed in 4 precision 1.123123 to 1.1232', () => {
     const chain = TheMath.createChain({
       round: {
         type: 'ceil',
-        decimal: 4
+        precision: 4
       }
     });
     const result = chain(1.123123).done();

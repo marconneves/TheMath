@@ -1,25 +1,25 @@
 export default function round(
   operation: { number: number },
   {
-    decimal = 0,
+    precision = 0,
     roundType = 'round'
   }: {
-    decimal?: number;
+    precision?: number;
     roundType?: 'floor' | 'ceil' | 'round';
   }
 ) {
   if (roundType === 'floor') {
     operation.number =
-      Math.floor(operation.number * 10 ** decimal) / 10 ** decimal;
+      Math.floor(operation.number * 10 ** precision) / 10 ** precision;
   }
 
   if (roundType === 'ceil') {
     operation.number =
-      Math.ceil(operation.number * 10 ** decimal) / 10 ** decimal;
+      Math.ceil(operation.number * 10 ** precision) / 10 ** precision;
   }
 
   if (roundType === 'round') {
     operation.number =
-      Math.round(operation.number * 10 ** decimal) / 10 ** decimal;
+      Math.round(operation.number * 10 ** precision) / 10 ** precision;
   }
 }

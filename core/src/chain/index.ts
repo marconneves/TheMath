@@ -15,7 +15,7 @@ export interface IRoundOptions {
    * round - rounds to nearest
    */
   type?: 'floor' | 'ceil' | 'round';
-  decimal?: number;
+  precision?: number;
 }
 
 export interface IChainOptions {
@@ -65,7 +65,8 @@ function createChain(globalInitOptions?: IChainOptions) {
           if (typeof options?.round !== 'boolean') {
             roundOptions = {
               roundType: options?.round?.type || globalOptions.round?.type,
-              decimal: options?.round?.decimal || globalOptions.round?.decimal
+              precision:
+                options?.round?.precision || globalOptions.round?.precision
             };
           }
 
