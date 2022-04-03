@@ -1,4 +1,5 @@
 import { numberCorrectionalBigger } from '../utils/numberCorrectional';
+import round from '../utils/round';
 
 export default function divide(
   firstNumber: number,
@@ -6,7 +7,9 @@ export default function divide(
 ): number {
   const correctional = numberCorrectionalBigger(firstNumber, secondNumber);
 
-  const number = (correctional * firstNumber) / (correctional * secondNumber);
+  const number =
+    round({ number: correctional * firstNumber }) /
+    round({ number: correctional * secondNumber });
 
   const endNumber = number;
 

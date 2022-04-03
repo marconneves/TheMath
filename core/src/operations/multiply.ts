@@ -1,4 +1,5 @@
 import { numberCorrectionalBigger } from '../utils/numberCorrectional';
+import round from '../utils/round';
 
 export default function multiply(
   firstNumber: number,
@@ -7,7 +8,8 @@ export default function multiply(
   const correctional = numberCorrectionalBigger(firstNumber, secondNumber);
 
   const number =
-    (correctional * firstNumber * (correctional * secondNumber)) /
+    (round({ number: correctional * firstNumber }) *
+      round({ number: correctional * secondNumber })) /
     correctional ** 2;
 
   const endNumber = number;

@@ -1,4 +1,5 @@
 import { numberCorrectionalBigger } from '../utils/numberCorrectional';
+import round from '../utils/round';
 
 export default function subtract(
   firstNumber: number,
@@ -7,9 +8,9 @@ export default function subtract(
   const correctional = numberCorrectionalBigger(firstNumber, secondNumber);
 
   const number =
-    (correctional * firstNumber - correctional * secondNumber) / correctional;
+    (round({ number: correctional * firstNumber }) -
+      round({ number: correctional * secondNumber })) /
+    correctional;
 
-  const endNumber = number;
-
-  return endNumber;
+  return number;
 }

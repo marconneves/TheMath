@@ -2,7 +2,7 @@ import divide from '../operations/divide';
 import multiply from '../operations/multiply';
 import subtract from '../operations/subtract';
 import sum from '../operations/sum';
-import round from './round';
+import round from '../utils/round';
 
 export interface IRoundOptions {
   /**

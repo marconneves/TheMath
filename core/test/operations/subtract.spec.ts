@@ -32,4 +32,10 @@ describe('Minus operations', () => {
 
     expect(result).toBe(0.1);
   });
+
+  it('can calculate 41.895 minus 12.2685', () => {
+    const result = TheMath.subtract(41.895, 12.2685);
+
+    expect(result).toBe(29.6265);
+  });
 });
