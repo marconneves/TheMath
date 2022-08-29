@@ -1,6 +1,6 @@
 {
   "name": "the-math",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Core of TheMath Calculator",
   "main": "./dist/index.js",
   "publishConfig": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TheMarkWill/TheMath/tree/main/core"
+    "url": "https://github.com/TheMarkWill/TheMath/tree/main"
   },
   "author": "Marcon Willian <oi@marcon.run>",
   "license": "MIT",

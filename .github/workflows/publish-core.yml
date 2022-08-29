@@ -3,7 +3,7 @@ name: Publish CORE
 on:
   push:
     branches:
-      - 'deploy/core'
+      - 'main'
 
 jobs:
   publish_npm:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./core
+        working-directory: ./
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./core
+        working-directory: ./
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
