@@ -144,20 +144,37 @@ function resolveNegativeNumber(fragments: string[]) {
 
   const internalResult = multiply(Number(fragments[numberNegative + 1]), -1);
 
-  fragments[numberNegative] = fragments[numberNegative].slice(0, 1);
   fragments[numberNegative + 1] = String(internalResult);
+
+  if (fragments[numberNegative] === '-') {
+    fragments.shift();
+  } else {
+    fragments[numberNegative] = fragments[numberNegative].slice(0, 1);
+  }
 
   resolveNegativeNumber(fragments);
 }
 
-function resolve(operation: string): number {
+type Arguments = { [key: string]: number };
+
+function resolveArguments(fragments: string[], parameters: Arguments) {
+  fragments.forEach((fragment, index) => {
+    if (parameters[fragment]) {
+      fragments[index] = String(parameters[fragment]);
+    }
+  });
+}
+
+function resolve(operation: string, parameters?: Arguments): number {
   const fragments = (
     operation.split(/(--?|\+-?|\*-?|x-?|\/-?|\(|\))/g) || []
   ).filter(value => value);
 
-  resolveBracket(fragments);
+  if (parameters) resolveArguments(fragments, parameters);
 
   resolveNegativeNumber(fragments);
+
+  resolveBracket(fragments);
 
   resolveOperations(fragments);
 

@@ -102,4 +102,24 @@ describe('Resolve string operations', () => {
 
     expect(result).toBe(13);
   });
+
+  test("can resolve 'x+-y--otherNumber' with arguments", () => {
+    const result = TheMath.resolve('x+-y--otherNumber', {
+      x: 12,
+      y: 1,
+      otherNumber: 2
+    });
+
+    expect(result).toBe(13);
+  });
+
+  test("can resolve 'x+-y--otherNumber' with arguments", () => {
+    const result = TheMath.resolve('x+-y--otherNumber', {
+      x: 12,
+      y: 523,
+      otherNumber: 44234
+    });
+
+    expect(result).toBe(43723);
+  });
 });
