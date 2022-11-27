@@ -12,4 +12,10 @@ describe('Chain operations', () => {
 
     expect(result).toBe(4.5);
   });
+
+  it('can calculate 3 subtract 6 after multiple for 2', () => {
+    const result = TheMath.chain(3).subtract(6).multiply(2).done();
+
+    expect(result).toBe(-6);
+  });
 });

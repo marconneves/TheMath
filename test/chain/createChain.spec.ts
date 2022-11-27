@@ -1,4 +1,4 @@
-import TheMath from '../../src';
+import TheMath, { IChainOptions } from '../../src';
 
 describe('Create Chain operations | Global Settings - round', () => {
   it('can round 1.2312 to 1', () => {
@@ -17,11 +17,21 @@ describe('Create Chain operations | Global Settings - round', () => {
     expect(result).toBe(2);
   });
 
-  it('can round 13.1 to 2', () => {
+  it('can round 13.1 to 13', () => {
     const chain = TheMath.createChain({
       round: true
     });
     const result = chain(13.1).done();
+    expect(result).toBe(13);
+  });
+
+  it('can round 13.1 to 13 when have invalid options round', () => {
+    const chain = TheMath.createChain({});
+    const result = chain(13.1).done({
+      round: {
+        other: 2
+      }
+    } as IChainOptions);
     expect(result).toBe(13);
   });
 });

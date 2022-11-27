@@ -9,6 +9,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage",
     "lint": "eslint --ext .ts ./"
   },
   "repository": {

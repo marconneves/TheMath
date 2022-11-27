@@ -13,6 +13,30 @@ describe('Resolve string operations', () => {
     expect(result).toBe(120);
   });
 
+  test("can resolve '-12x10' with negative number in fist", () => {
+    const result = TheMath.resolve('-12x10');
+
+    expect(result).toBe(-120);
+  });
+
+  test("can resolve '12x-10x-1' with negative number in last and middle number", () => {
+    const result = TheMath.resolve('12x-10x-2');
+
+    expect(result).toBe(240);
+  });
+
+  test("can resolve '10/2*10*2'", () => {
+    const result = TheMath.resolve('10/2*10*2');
+
+    expect(result).toBe(100);
+  });
+
+  test('can return NaN on invalid operation', () => {
+    const result = TheMath.resolve(null as unknown as string);
+
+    expect(result).toBe(NaN);
+  });
+
   test("can resolve '12/10'", () => {
     const result = TheMath.resolve('12/10');
 
