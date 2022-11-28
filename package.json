@@ -1,7 +1,7 @@
 {
   "name": "the-math",
-  "version": "1.5.3",
-  "description": "TheMath Calculator",
+  "version": "1.5.4",
+  "description": "TheMath is an extensive math library for JavaScript and Node.js. It features a flexible expression parser",
   "main": "./dist/index.js",
   "publishConfig": {
     "access": "public"
