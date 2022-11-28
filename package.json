@@ -1,7 +1,7 @@
 {
   "name": "the-math",
-  "version": "1.5.2",
-  "description": "Core of TheMath Calculator",
+  "version": "1.5.3",
+  "description": "TheMath Calculator",
   "main": "./dist/index.js",
   "publishConfig": {
     "access": "public"
@@ -23,6 +23,21 @@
     "url": "https://github.com/themarkwill/TheMath/issues"
   },
   "homepage": "https://github.com/themarkwill/TheMath#readme",
+  "keywords": [
+    "math",
+    "mathematics",
+    "functions",
+    "numeric",
+    "algebra",
+    "parser",
+    "expression",
+    "number",
+    "bignumber",
+    "complex",
+    "fraction",
+    "matrix",
+    "unit"
+  ],
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
