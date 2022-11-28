@@ -8,21 +8,21 @@ import subtract from '../operations/subtract';
 import { getNegativeOperation } from './getNegativeOperation';
 
 function divisionOrMultiplication(fragments: string[]) {
-  const multiplyIndex = fragments.indexOf('x');
+  const multiplyIndexX = fragments.indexOf('x');
   const multiplyAsteriskIndex = fragments.indexOf('*');
+  const multiplyIndex =
+    multiplyIndexX > multiplyAsteriskIndex
+      ? multiplyIndexX
+      : multiplyAsteriskIndex;
   const divisionIndex = fragments.indexOf('/');
 
-  if (
-    multiplyIndex === -1 &&
-    multiplyAsteriskIndex === -1 &&
-    divisionIndex === -1
-  ) {
+  if (multiplyIndex === -1 && divisionIndex === -1) {
     return;
   }
 
   if (
     multiplyIndex !== -1 &&
-    (multiplyIndex > divisionIndex || multiplyIndex > multiplyAsteriskIndex)
+    (multiplyIndex < divisionIndex || divisionIndex === -1)
   ) {
     const internalResult = multiply(
       Number(fragments[multiplyIndex - 1]),
@@ -34,22 +34,8 @@ function divisionOrMultiplication(fragments: string[]) {
   }
 
   if (
-    multiplyAsteriskIndex !== -1 &&
-    (multiplyAsteriskIndex > divisionIndex ||
-      multiplyAsteriskIndex > multiplyIndex)
-  ) {
-    const internalResult = multiply(
-      Number(fragments[multiplyAsteriskIndex - 1]),
-      Number(fragments[multiplyAsteriskIndex + 1])
-    );
-
-    fragments[multiplyAsteriskIndex - 1] = String(internalResult);
-    fragments.splice(multiplyAsteriskIndex, 2);
-  }
-
-  if (
     divisionIndex !== -1 &&
-    (divisionIndex > multiplyIndex || divisionIndex > multiplyAsteriskIndex)
+    (divisionIndex < multiplyIndex || multiplyIndex === -1)
   ) {
     const internalResult = divide(
       Number(fragments[divisionIndex - 1]),
@@ -167,7 +153,7 @@ function resolveArguments(fragments: string[], parameters: Arguments) {
 
 function resolve(operation: string, parameters?: Arguments): number {
   const fragments = (
-    operation.split(/(--?|\+-?|\*-?|x-?|\/-?|\(|\))/g) || []
+    operation?.split(/(--?|\+-?|\*-?|x-?|\/-?|\(|\))/g) || []
   ).filter(value => value);
 
   if (parameters) resolveArguments(fragments, parameters);
