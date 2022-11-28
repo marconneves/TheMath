@@ -41,5 +41,14 @@
     "ts-node": "^10.7.0",
     "ts-node-dev": "^1.0.0-pre.49",
     "typescript": "^4.6.2"
+  },
+  "jest-junit": {
+      "outputDirectory": "reports",
+      "outputName": "jest-junit.xml",
+      "ancestorSeparator": " › ",
+      "uniqueOutputName": "false",
+      "suiteNameTemplate": "{filepath}",
+      "classNameTemplate": "{classname}",
+      "titleTemplate": "{title}"
   }
 }
