@@ -49,7 +49,7 @@ const result = TheMath.subtract(10, 3);
 // result: 7
 ```
 
-**3.** Solve subtraction between 2 numbers.
+**3.** Solve sum between 2 numbers.
 
 ```TypeScript
 import TheMath from 'the-math';
