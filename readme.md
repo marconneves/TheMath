@@ -21,6 +21,7 @@ You can install with [yarn][the-math-yarn]:
 - Sum       - Solve sum between 2 numbers.
 - divide    - Solve division between 2 numbers.
 - multiply  - Solve multiplication between 2 numbers.
+- powerOf   - Solve a power of operation between 2 numbers.
 - resolve   - Solve a string operation arithmetic.
 
 ## Exemples
@@ -76,13 +77,22 @@ const result = TheMath.multiply(6, 3);
 // result: 18
 ```
 
-**6.** Solve a string operation arithmetic.
+**6.** Solve power of operation between 2 numbers.
 
 ```TypeScript
 import TheMath from 'the-math';
 
-const result = TheMath.resolve('12+4*3*9/2+1');
-// result: 67
+const result = TheMath.powerOf(2, 3);
+// result: 8
+```
+
+**7.** Solve a string operation arithmetic.
+
+```TypeScript
+import TheMath from 'the-math';
+
+const result = TheMath.resolve('12+4*3^2/2+1');
+// result: 31
 ```
 
 ## Contributors

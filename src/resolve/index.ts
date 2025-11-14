@@ -5,7 +5,38 @@ import multiply from '../operations/multiply';
 import divide from '../operations/divide';
 import sum from '../operations/sum';
 import subtract from '../operations/subtract';
+import powerOf from '../operations/powerOf';
 import { getNegativeOperation } from './getNegativeOperation';
+
+function powerOfOperation(fragments: string[]) {
+  let powerOfIndex = -1;
+  for (let i = fragments.length - 1; i >= 0; i--) {
+    if (fragments[i].startsWith('^')) {
+      powerOfIndex = i;
+      break;
+    }
+  }
+
+  if (powerOfIndex === -1) {
+    return;
+  }
+
+  const operator = fragments[powerOfIndex];
+  const secondNumber =
+    operator === '^-'
+      ? -Number(fragments[powerOfIndex + 1])
+      : Number(fragments[powerOfIndex + 1]);
+
+  const internalResult = powerOf(
+    Number(fragments[powerOfIndex - 1]),
+    secondNumber
+  );
+
+  fragments[powerOfIndex - 1] = String(internalResult);
+  fragments.splice(powerOfIndex, 2);
+
+  powerOfOperation(fragments);
+}
 
 function divisionOrMultiplication(fragments: string[]) {
   const multiplyIndexX = fragments.indexOf('x');
@@ -110,7 +141,7 @@ function resolveBracket(fragments: string[]) {
       closeIndex - openIndex - 1
     );
 
-    resolveOperations(bracketOperation);
+    resolveAllOperations(bracketOperation);
 
     const [resultBracketOperation] = bracketOperation;
 
@@ -151,18 +182,25 @@ function resolveArguments(fragments: string[], parameters: Arguments) {
   });
 }
 
+function resolveAllOperations(fragments: string[]) {
+  const numberPowerOf = fragments.filter(value => /(\^)/g.test(value)).length;
+  if (numberPowerOf > 0) {
+    powerOfOperation(fragments);
+  }
+
+  resolveNegativeNumber(fragments);
+  resolveOperations(fragments);
+}
+
 function resolve(operation: string, parameters?: Arguments): number {
   const fragments = (
-    operation?.split(/(--?|\+-?|\*-?|x-?|\/-?|\(|\))/g) || []
+    operation?.split(/(--?|\+-?|\*-?|x-?|\/-?|\^-?|\(|\))/g) || []
   ).filter(value => value);
 
   if (parameters) resolveArguments(fragments, parameters);
 
-  resolveNegativeNumber(fragments);
-
   resolveBracket(fragments);
-
-  resolveOperations(fragments);
+  resolveAllOperations(fragments);
 
   const [result] = fragments;
   return Number(result);
