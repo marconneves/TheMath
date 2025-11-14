@@ -146,4 +146,40 @@ describe('Resolve string operations', () => {
 
     expect(result).toBe(43723);
   });
+
+  test("can resolve '2^3'", () => {
+    const result = TheMath.resolve('2^3');
+    expect(result).toBe(8);
+  });
+
+  test("can resolve '2^3^2'", () => {
+    const result = TheMath.resolve('2^3^2');
+    expect(result).toBe(512);
+  });
+
+  test("can resolve '2*3^2'", () => {
+    const result = TheMath.resolve('2*3^2');
+    expect(result).toBe(18);
+  });
+
+  test("can resolve '0.5^2'", () => {
+    const result = TheMath.resolve('0.5^2');
+    expect(result).toBe(0.25);
+  });
+
+  test("can resolve '2^-3'", () => {
+    const result = TheMath.resolve('2^-3');
+    expect(result).toBe(0.125);
+  });
+
+  test("can resolve '-0.5^2'", () => {
+    const result = TheMath.resolve('-0.5^2');
+    expect(result).toBe(-0.25);
+  });
+
+  test('should throw an error for non-integer exponents', () => {
+    expect(() => TheMath.resolve('2^0.5')).toThrow(
+      'Non-integer exponents are not supported.'
+    );
+  });
 });
