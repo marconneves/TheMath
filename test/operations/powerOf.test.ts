@@ -1,4 +1,4 @@
-import powerOf from '../src/operations/powerOf';
+import powerOf from '../../src/operations/powerOf';
 
 describe('powerOf', () => {
   it('should correctly calculate the power of a number', () => {

@@ -141,7 +141,7 @@ function resolveBracket(fragments: string[]) {
       closeIndex - openIndex - 1
     );
 
-    resolveOperations(bracketOperation);
+    resolveAllOperations(bracketOperation);
 
     const [resultBracketOperation] = bracketOperation;
 
@@ -182,6 +182,16 @@ function resolveArguments(fragments: string[], parameters: Arguments) {
   });
 }
 
+function resolveAllOperations(fragments: string[]) {
+  const numberPowerOf = fragments.filter(value => /(\^)/g.test(value)).length;
+  if (numberPowerOf > 0) {
+    powerOfOperation(fragments);
+  }
+
+  resolveNegativeNumber(fragments);
+  resolveOperations(fragments);
+}
+
 function resolve(operation: string, parameters?: Arguments): number {
   const fragments = (
     operation?.split(/(--?|\+-?|\*-?|x-?|\/-?|\^-?|\(|\))/g) || []
@@ -190,15 +200,7 @@ function resolve(operation: string, parameters?: Arguments): number {
   if (parameters) resolveArguments(fragments, parameters);
 
   resolveBracket(fragments);
-
-  const numberPowerOf = fragments.filter(value => /(\^)/g.test(value)).length;
-  if (numberPowerOf > 0) {
-    powerOfOperation(fragments);
-  }
-
-  resolveNegativeNumber(fragments);
-
-  resolveOperations(fragments);
+  resolveAllOperations(fragments);
 
   const [result] = fragments;
   return Number(result);

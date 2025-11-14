@@ -1,4 +1,4 @@
-import resolve from '../src/resolve';
+import resolve from '../../src/resolve';
 
 describe('resolve', () => {
   it('should correctly calculate the power of a number', () => {
