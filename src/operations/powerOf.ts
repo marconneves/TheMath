@@ -1,5 +1,6 @@
 import divide from './divide';
 import multiply from './multiply';
+import abs from '../utils/abs';
 
 export default function powerOf(
   firstNumber: number,
@@ -15,7 +16,7 @@ export default function powerOf(
 
   let result = 1;
   const isNegative = secondNumber < 0;
-  const exponent = Math.abs(secondNumber);
+  const exponent = abs(secondNumber);
 
   for (let i = 0; i < exponent; i++) {
     result = multiply(result, firstNumber);
